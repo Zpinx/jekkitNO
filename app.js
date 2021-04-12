@@ -9,7 +9,7 @@ const   express         = require("express"),
         User            = require("./models/user"),
         seedDB          = require("./seeds");
         secrets         = require('./secrets')
-        port            = "3000";    // creates the server @ http://127.0.0.1:3000 
+        port            = "80";    // creates the server @ http://127.0.0.1:3000 
 
         // =================
         // ROUTES
