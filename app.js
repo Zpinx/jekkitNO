@@ -8,6 +8,7 @@ const   express         = require("express"),
         flash           = require('connect-flash'),
         User            = require("./models/user"),
         seedDB          = require("./seeds");
+        secrets         = require('./secrets')
         port            = "3000";    // creates the server @ http://127.0.0.1:3000 
 
         // =================
@@ -17,8 +18,8 @@ const   commentRoutes   = require("./routes/comments"),
         campgroundRoutes= require("./routes/campgrounds"),
         indexRoutes      = require("./routes/index");
 
-    //    mongoose.connect("mongodb+srv://dbJekkit:Jekkit4321@jekkitclutser.adply.mongodb.net/JKDB?retryWrites=true&w=majority")
-mongoose.connect("mongodb+srv://dbJekkit:Jekkit4321@jekkitclutser.adply.mongodb.net/test?authSource=admin&replicaSet=atlas-abqo76-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true", {useNewUrlParser: true,  useUnifiedTopology: true, useFindAndModify: false });
+
+secrets();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
