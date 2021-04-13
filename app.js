@@ -9,7 +9,7 @@ const   express         = require("express"),
         User            = require("./models/user"),
         seedDB          = require("./seeds");
         secrets         = require('./secrets')
-        port            = "80";    // creates the server @ http://127.0.0.1:3000 
+        //port            = "3000";    //!LOCAL ONLY! creates the server @ http://127.0.0.1:3000 
 
         // =================
         // ROUTES
@@ -24,14 +24,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
-seedDB(); //seed the database
+//seedDB(); //seed the database
  
 
 // =====================================================================================
 // PASSPORT CONFIGURATION
 // =====================================================================================
 app.use(require("express-session")({
-    secret: "Nora og Emma er nydelig<3",
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false
 }));
@@ -58,7 +58,7 @@ app.use("/campgrounds/:id/comments",commentRoutes);
 
 
 app.listen(process.env.PORT, process.env.IP, function() {
-    console.log("server has started")
+    console.log(process.env.PORT)
 });
 
 
