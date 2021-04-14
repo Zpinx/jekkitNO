@@ -31,7 +31,7 @@ app.use(methodOverride("_method"));
 // PASSPORT CONFIGURATION
 // =====================================================================================
 app.use(require("express-session")({
-    secret: process.env.SESSION_SECRET,
+    secret: "thisisnotagoodsecret",
     resave: false,
     saveUninitialized: false
 }));
@@ -57,7 +57,7 @@ app.use("/campgrounds/:id/comments",commentRoutes);
 
 
 
-app.listen(process.env.PORT, process.env.IP, function() {
+app.listen("3000", process.env.IP, function() {
     console.log(process.env.PORT)
 });
 
