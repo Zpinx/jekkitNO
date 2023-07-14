@@ -1,6 +1,6 @@
 {
   "name": "jekkitno",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "description": "RESTFULL ROUTES",
   "main": "app.js",
   "scripts": {
@@ -23,6 +23,7 @@
     "mongodb": "^5.7.0",
     "mongoose": "^7.3.4",
     "nodemon": "^3.0.1",
+    "nvm": "^0.0.4",
     "passport": "^0.6.0",
     "passport-azure-ad": "^4.3.5",
     "passport-local": "^1.0.0",
