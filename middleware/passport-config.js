@@ -1,15 +1,15 @@
 const passport = require("passport");
-const env      = require('dotenv').config();
+
 const { OIDCStrategy } = require("passport-azure-ad");
 
 const azureADOptions = {
   identityMetadata: "https://login.microsoftonline.com/7cd6d84a-2a63-49f6-8ff4-ccc63f6d3cec/v2.0/.well-known/openid-configuration",
-  clientID: env.clientID,
+  clientID: "46236004-6b4a-4b5e-8f96-413e68d547dd",
   responseType: "code",
   responseMode: "form_post",
   redirectUrl: "jekkit.azurewebsites.net",
   allowHttpForRedirectUrl: true, // Set to false in production
-  clientSecret: env.clientSecret,
+  clientSecret: "ZjQ8Q~DKZjYsaLYxE3CKb4ih30CLOrpcCY0v-c3F",
   validateIssuer: false, // Set to true to validate the issuer
   passReqToCallback: false,
 };
