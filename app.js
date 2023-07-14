@@ -9,8 +9,8 @@ const   express         = require("express"),
         User            = require("./models/user"),
         seedDB          = require("./seeds");
         GetMongoUri     = require('./secrets');
-        process         = require('dotenv').config();
-        port            = "3000";    //!LOCAL ONLY! creates the server @ http://127.0.0.1:3000 
+        require('dotenv').config();
+        //port            = "3000";    //!LOCAL ONLY! creates the server @ http://127.0.0.1:3000 
         vaultName = "jekkit-keyvault";
         secretName = "mongooseURI";
 
