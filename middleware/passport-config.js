@@ -7,7 +7,7 @@ const azureADOptions = {
   clientID: "46236004-6b4a-4b5e-8f96-413e68d547dd",
   responseType: "code",
   responseMode: "form_post",
-  redirectUrl: "jekkit.azurewebsites.net",
+  redirectUrl: "https://jekkit.azurewebsites.net",
   allowHttpForRedirectUrl: true, // Set to false in production
   clientSecret: "ZjQ8Q~DKZjYsaLYxE3CKb4ih30CLOrpcCY0v-c3F",
   validateIssuer: false, // Set to true to validate the issuer
