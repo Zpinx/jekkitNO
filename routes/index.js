@@ -2,7 +2,6 @@ const   express     = require("express"),
         router      = express.Router(),
         passport    = require("passport"),
         User        = require("../models/user"),
-       
         flash           = require("connect-flash"),
         Middleware      = require("../middleware/index");
        
@@ -34,7 +33,7 @@ router.post("/register", function(req, res){
             res.redirect("back");
         } else {
             passport.authenticate("local")(req,res, function(){
-                req.flash("success", "Welcome to YelpCamp " + user.username);
+                req.flash("success", "Welcome to JekkitCloud " + user.username);
                 res.redirect("/campgrounds");
             })
         }

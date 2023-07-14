@@ -1,29 +1,31 @@
 {
-  "name": "jekkit",
-  "version": "1.0.1",
+  "name": "jekkitno",
+  "version": "1.0.0",
   "description": "RESTFULL ROUTES",
   "main": "app.js",
-  "scripts": {},
-  "author": "thomas",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.2",
     "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.6",
-    "dotenv": "^8.6.0",
+    "dotenv": "^16.3.1",
     "ejs": "^3.1.9",
     "express": "^4.18.2",
     "express-session": "^1.17.3",
     "git": "^0.1.5",
     "method-override": "^3.0.0",
     "mongod": "^2.0.0",
-    "mongodb": "^3.7.4",
-    "mongoose": "^5.13.20",
-    "nodegit": "^0.26.5",
-    "nodemon": "^2.0.22",
-    "passport": "^0.4.1",
+    "mongodb": "^5.7.0",
+    "mongoose": "^7.3.4",
+    "nodemon": "^3.0.1",
+    "passport": "^0.6.0",
+    "passport-azure-ad": "^4.3.5",
     "passport-local": "^1.0.0",
-    "passport-local-mongoose": "^6.3.0"
-  },
-  "devDependencies": {}
+    "passport-local-mongoose": "^8.0.0"
+  }
 }
