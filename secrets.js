@@ -5,16 +5,6 @@ const { SecretClient } = require("@azure/keyvault-secrets");
 const vaultName = "jekkit-keyvault";
 const secretName = "mongooseURI";
 
-secrets(vaultName, secretName)
-  .then((uri) => {
-    console.log("URI retrieved from Azure Key Vault:", uri);
-  })
-  .catch((error) => {
-    console.error("Error retrieving URI from Azure Key Vault:", error);
-  });
-
-
-
 async function secrets(vaultName, secretName) {
   // Create a credential object using DefaultAzureCredential
   const credential = new DefaultAzureCredential();

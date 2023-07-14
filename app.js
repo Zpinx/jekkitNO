@@ -9,7 +9,7 @@ const   express         = require("express"),
         User            = require("./models/user"),
         seedDB          = require("./seeds");
         secrets         = require('./secrets')
-        //port            = "3000";    //!LOCAL ONLY! creates the server @ http://127.0.0.1:3000 
+        port            = "3000";    //!LOCAL ONLY! creates the server @ http://127.0.0.1:3000 
 
         // =================
         // ROUTES
@@ -18,8 +18,18 @@ const   commentRoutes   = require("./routes/comments"),
         campgroundRoutes= require("./routes/campgrounds"),
         indexRoutes      = require("./routes/index");
 
-
-secrets();
+       
+        
+        const vaultName = "jekkit-keyvault";
+        const secretName = "mongooseURI";
+        secrets(vaultName, secretName)
+          .then((uri) => {
+            console.log("URI retrieved from Azure Key Vault:", uri);
+          })
+          .catch((error) => {
+            console.error("Error retrieving URI from Azure Key Vault:", error);
+          });
+        
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
