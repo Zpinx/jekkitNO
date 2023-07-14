@@ -5,7 +5,7 @@ const { SecretClient } = require("@azure/keyvault-secrets");
 const vaultName = "jekkit-keyvault";
 const secretName = "mongooseURI";
 
-getUriFromKeyVault(vaultName, secretName)
+secrets(vaultName, secretName)
   .then((uri) => {
     console.log("URI retrieved from Azure Key Vault:", uri);
   })
