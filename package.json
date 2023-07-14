@@ -3,11 +3,7 @@
   "version": "1.1.1",
   "description": "RESTFULL ROUTES",
   "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
+  "author": "Thomas",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.2",
