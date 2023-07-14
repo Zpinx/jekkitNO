@@ -28,7 +28,7 @@ const   commentRoutes   = require("./routes/comments"),
 
         
            
-GetMongoUri(vaultName, secretName);        
+GetMongoUri();        
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));

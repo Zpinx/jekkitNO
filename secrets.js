@@ -2,7 +2,9 @@ const   mongoose = require ("mongoose");
 const { DefaultAzureCredential } = require("@azure/identity");
 const { SecretClient } = require("@azure/keyvault-secrets");
 
-
+function GetMongoUri(){
+  var mongooseURI = mongoose.connect("mongodb+srv://dbJekkit:Jekkit4321@jekkitcluster.fjac8eo.mongodb.net/?retryWrites=true&w=majority", {useNewUrlParser: true,  useUnifiedTopology: true, useFindAndModify: false }
+  )};
 
 /*GetMongoUri(vaultName, secretName)
   .then((uri) => {
@@ -11,7 +13,7 @@ const { SecretClient } = require("@azure/keyvault-secrets");
   .catch((error) => {
     console.error("Error retrieving URI from Azure Key Vault:", error);
   });
-*/
+
 
 async function GetMongoUri(vaultName, secretName) {
   // Create a credential object using DefaultAzureCredential
@@ -32,6 +34,7 @@ async function GetMongoUri(vaultName, secretName) {
     throw error;
   }
 }
+*/
 
 
 module.exports = GetMongoUri;
