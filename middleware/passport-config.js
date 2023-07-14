@@ -3,7 +3,7 @@ const env      = require('dotenv').config();
 const { OIDCStrategy } = require("passport-azure-ad");
 
 const azureADOptions = {
-  identityMetadata: "https://login.microsoftonline.com/{tenant-id}/v2.0/.well-known/openid-configuration",
+  identityMetadata: "https://login.microsoftonline.com/7cd6d84a-2a63-49f6-8ff4-ccc63f6d3cec/v2.0/.well-known/openid-configuration",
   clientID: env.clientID,
   responseType: "code",
   responseMode: "form_post",

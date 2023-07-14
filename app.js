@@ -36,11 +36,19 @@ app.use(methodOverride("_method"));
 // =====================================================================================
 // PASSPORT CONFIGURATION
 // =====================================================================================
-app.use(require("express-session")({
+
+app.use(
+    session({
+      secret: "fkUvsqqrKavVxeqGNApjtd4*o*pkndjF!Cik@fgk3_dm7-ELCiqh76WABR2DWF42A!M8JR8BFTZD6PFM9JvFzWc!ibAxJoTLa_39", // Replace with your session secret
+      resave: false,
+      saveUninitialized: false,
+    })
+  );
+/*app.use(require("express-session")({
     secret: "fkUvsqqrKavVxeqGNApjtd4*o*pkndjF!Cik@fgk3_dm7-ELCiqh76WABR2DWF42A!M8JR8BFTZD6PFM9JvFzWc!ibAxJoTLa_39",
     resave: false,
     saveUninitialized: false
-}));
+}));*/
 app.use(flash())
 app.use(passport.initialize());
 app.use(passport.session());
