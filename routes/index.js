@@ -40,19 +40,18 @@ router.post("/register", function(req, res){
     } );
 })
 
-// LOGIN ROUTE
-router.get("/login", function(req, res){
-    
-    res.render("login");
-});
+// Login route
+router.get("/login", passport.authenticate("azuread-openidconnect", { failureRedirect: "/login" }));
 
-// LOGIN LOGIC ROUTE
-router.post("/login",passport.authenticate("local", {
-    successRedirect: "/campgrounds",
-    failureRedirect: "/login"
-}) , function(req, res){
-    
-});
+// Callback route after successful authentication
+router.post(
+  "/login/callback",
+  passport.authenticate("azuread-openidconnect", { failureRedirect: "/login" }),
+  function (req, res) {
+    // Redirect or respond as needed after successful authentication
+    res.redirect("/campgrounds");
+  }
+);
 
 
 // LOGOUT ROUTE
